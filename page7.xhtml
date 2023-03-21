@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <f:facet name="header">map</f:facet>
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Id</th>
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Patronymic</th>
+            <th>Address</th>
+            <th>Card Number</th>
+            <th>Card Balance</th>
+            <th>Birth Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ui:repeat value="#{customerBean.findMaxCardBalanceByYear().entrySet().toArray()}" var="entry">
+            <tr>
+                <td><h:outputText value="#{entry.key}" /></td>
+                <td><h:outputText value="#{entry.value.id}" /></td>
+                <td><h:outputText value="#{entry.value.surname}" /></td>
+                <td><h:outputText value="#{entry.value.name}" /></td>
+                <td><h:outputText value="#{entry.value.patronymic}" /></td>
+                <td><h:outputText value="#{entry.value.address}" /></td>
+                <td><h:outputText value="#{entry.value.cardNumber}" /></td>
+                <td><h:outputText value="#{entry.value.cardBalance}" /></td>
+                <td><h:outputText value="#{entry.value.birthDate}" /></td>
+            </tr>
+        </ui:repeat>
+        </tbody>
+    </table>
+</f:view>
+
+</html>
+
+

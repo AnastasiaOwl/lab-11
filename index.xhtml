@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title> lab 11</title>
+    </h:head>
+    <h:body>
+        <h1>lab 11</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="name:" for="nameSearch"/>
+                <h:inputText value="#{customerBean.searchName}" id="nameSearch"/>
+                <h:commandButton value="Search by name" action="page2"/>
+            </h:panelGrid>
+            <h:panelGrid columns="5">
+                <h:outputLabel value="cardNumber:" for="cardNumber"/>
+                <h:inputText value="#{customerBean.cardNumber}" id="cardNumber"/>
+                <h:outputLabel value="cardNumberEnd:" for="cardNumberEnd"/>
+                <h:inputText value="#{customerBean.cardNumberEnd}" id="cardNumberEnd"/>
+                <h:commandButton value="find By CardNumber Between" action="page3"/>
+            </h:panelGrid>
+            <h:panelGrid columns="1">
+            <h:commandButton value="Show all customers" action="page1"/>
+            <h:commandButton value="sort By CardBalance" action="page4"/>
+            <h:commandButton value="sort By CardBalance And CardNumber" action="page5"/>
+            <h:commandButton value="get only Year" action="page6"/>
+            <h:commandButton value="sort By CardBalance for every year" action="page7"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
